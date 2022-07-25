@@ -7,7 +7,7 @@ class RegisterTest < ActiveSupport::TestCase
     Mutations::Register.new(object: nil, field: nil, context: {}).resolve(**args)
   end
 
-  test 'create a new doctor' do
+  test 'should create a new doctor' do
     payload = perform(
       name: 'Julian',
       university: 'Cambridge'
