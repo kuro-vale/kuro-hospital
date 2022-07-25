@@ -4,11 +4,7 @@ module Types
   # Expose mutations types
   class MutationType < Types::BaseObject
     description 'Self descriptive.'
-    # TODO: remove me
-    # field :test_field, String, null: false,
-    #                            description: 'An example field added by the generator'
-    # def test_field
-    #   'Hello World'
-    # end
+
+    field :register, mutation: Mutations::Register, description: 'Create a new doctor, type used for authentication.'
   end
 end
