@@ -8,6 +8,11 @@ ruby '3.1.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
+# GraphQL gem
+gem 'graphql'
+# GraphiQL playground
+gem 'graphiql-rails'
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.5'
 
@@ -23,9 +28,8 @@ group :development, :test do
 end
 
 group :development do
-  # vscode extension
-  gem 'solargraph'
   # Rails lint
   gem 'rubocop'
+  gem 'rubocop-graphql'
   gem 'rubocop-rails'
 end

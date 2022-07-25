@@ -10,6 +10,9 @@
 # Ignore enviroment variables script
 env.sh
 
+# VSCODE
+/.vscode
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
