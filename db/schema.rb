@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_25_201439) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_26_011329) do
   create_table "doctors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "university"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "username"
+    t.string "password_digest"
+    t.index ["username"], name: "index_doctors_on_username", unique: true
   end
 
 end

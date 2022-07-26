@@ -1,4 +1,6 @@
 one:
   name: "TestName"
   university: "TestUniversity"
+  username: "TestUsername"
+  password_digest: "TestPassword"
   
