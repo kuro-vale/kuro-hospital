@@ -23,9 +23,9 @@ module Mutations
     def resolve(id:, update_profile_input: nil, username: nil)
       doctor = Doctor.find(id)
       doctor.update!(
-        name: (update_profile_input&.[](:name).nil? ? doctor.name : update_profile_input&.[](:name)),
+        name: (update_profile_input&.[](:name).nil? ? doctor.name : update_profile_input[:name]),
         university:
-        (update_profile_input&.[](:university).nil? ? doctor.university : update_profile_input&.[](:university)),
+        (update_profile_input&.[](:university).nil? ? doctor.university : update_profile_input[:university]),
         username: (username.nil? ? doctor.username : username)
       )
       doctor
