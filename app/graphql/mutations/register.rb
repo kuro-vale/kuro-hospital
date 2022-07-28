@@ -15,16 +15,30 @@ module Mutations
     argument :auth_input, Types::AuthInput, required: true, description: 'Required data for authentication'
     argument :profile_input, ProfileInput, required: true, description: 'Data for creating doctor profile'
 
-    # return type from the mutation
-    type Types::DoctorType
+    field :doctor, Types::DoctorType, null: false, description: 'Registered doctor'
+    field :token, String, null: false, description: 'Token to handle sessions'
 
     def resolve(profile_input:, auth_input:)
-      Doctor.create!(
+      doctor = Doctor.create!(
         name: profile_input[:name],
         university: profile_input[:university],
         username: auth_input[:username],
         password: auth_input[:password]
       )
+      token = generate_token(doctor.id)
+      context[:session][:token] = token
+
+      { doctor:, token: }
+    end
+
+    private
+
+    def generate_token(doctor_id)
+      payload = {
+        sub: doctor_id,
+        iat: Time.current.to_i
+      }
+      JWT.encode(payload, ENV.fetch('HMAC_SECRET'), 'HS256')
     end
   end
 end
