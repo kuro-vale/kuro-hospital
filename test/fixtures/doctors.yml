@@ -2,5 +2,5 @@ one:
   name: "TestName"
   university: "TestUniversity"
   username: "TestUsername"
-  password_digest: "TestPassword"
+  password_digest: "$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe" # 123
   

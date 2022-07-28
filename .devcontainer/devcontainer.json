@@ -11,7 +11,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"rebornix.ruby"
+				"rebornix.ruby",
+				"misogi.ruby-rubocop"
 			]
 		}
 	}

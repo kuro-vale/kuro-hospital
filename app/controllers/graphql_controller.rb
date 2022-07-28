@@ -13,8 +13,8 @@ class GraphqlController < ApplicationController
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      session:,
+      current_user:
     }
     result = KuroHospitalSchema.execute(query, variables:, context:, operation_name:)
     render json: result
@@ -25,6 +25,16 @@ class GraphqlController < ApplicationController
   end
 
   private
+
+  def current_user
+    return unless session[:token]
+
+    token = session[:token]
+    decoded_token = JWT.decode(token, ENV.fetch('HMAC_SECRET'), true, { algorithm: 'HS256' })
+    Doctor.find(decoded_token[0]['sub'])
+  rescue JWT::DecodeError
+    nil
+  end
 
   # Handle variables in form data, JSON body, or a blank value
   def prepare_variables(variables_param)
@@ -47,6 +57,8 @@ class GraphqlController < ApplicationController
   end
 
   def handle_error_in_development(error)
+    logger.error error.backtrace.join("\n")
+
     render json: { errors: [{ message: error.message }], data: {} },
            status: :internal_server_error
   end
