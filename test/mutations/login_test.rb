@@ -25,4 +25,26 @@ class LoginTest < ActiveSupport::TestCase
       JWT.decode(payload[:token], ENV.fetch('HMAC_SECRET'), true, { algorithm: 'HS256' })
     end
   end
+
+  test 'should not login doctor with invalid password' do
+    assert_raise(Exceptions::AuthenticationError) do
+      perform(
+        credentials: {
+          username: @doctor.username,
+          password: '1234'
+        }
+      )
+    end
+  end
+
+  test 'should not login doctor with invalid username' do
+    assert_raise(Exceptions::InvalidUsername) do
+      perform(
+        credentials: {
+          username: 'Nil',
+          password: '123'
+        }
+      )
+    end
+  end
 end

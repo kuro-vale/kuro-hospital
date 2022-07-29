@@ -3,6 +3,7 @@
 module Mutations
   # Register resolver
   class Register < BaseMutation
+    include AuthHelper
     description 'Create a new doctor, type used for authentication.'
 
     class ProfileInput < Types::BaseInputObject
@@ -29,16 +30,6 @@ module Mutations
       context[:session][:token] = token
 
       { doctor:, token: }
-    end
-
-    private
-
-    def generate_token(doctor_id)
-      payload = {
-        sub: doctor_id,
-        iat: Time.current.to_i
-      }
-      JWT.encode(payload, ENV.fetch('HMAC_SECRET'), 'HS256')
     end
   end
 end
