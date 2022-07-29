@@ -4,7 +4,7 @@ module Mutations
   module Doctors
     # Edit doctor mutation
     class DeleteDoctor < Mutations::BaseMutation
-      description 'Delete logger doctor.'
+      description 'Delete logged doctor.'
 
       field :message, String, description: 'message of success'
 
