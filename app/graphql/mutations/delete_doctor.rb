@@ -3,15 +3,14 @@
 module Mutations
   # Edit doctor mutation
   class DeleteDoctor < BaseMutation
-    description 'Update your doctor profile.'
-
-    # TODO: remove, change find by id with find by current session
-    argument :id, ID, required: true, description: 'Find the doctor to update'
+    description 'Delete logger doctor.'
 
     field :message, String, description: 'message of success'
 
-    def resolve(id:)
-      doctor = Doctor.find(id)
+    def resolve
+      raise Exceptions::AuthenticationError, 'Not Authenticated, please login' unless context[:current_user]
+
+      doctor = context[:current_user]
       { message: "#{doctor.name} was deleted" } if doctor.destroy
     end
   end

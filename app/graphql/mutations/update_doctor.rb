@@ -12,16 +12,15 @@ module Mutations
       argument :university, String, required: false, description: 'Update the university where you attended'
     end
 
-    # TODO: remove, change find by id with find by current session
-    argument :id, ID, required: true, description: 'Find the doctor to update'
-
     argument :update_profile_input, UpdateProfileInput, required: false, description: 'Data for updating doctor profile'
     argument :username, String, required: false, description: 'Update your username'
 
     type Types::DoctorType
 
-    def resolve(id:, update_profile_input: nil, username: nil)
-      doctor = Doctor.find(id)
+    def resolve(update_profile_input: nil, username: nil)
+      raise Exceptions::AuthenticationError, 'Not Authenticated, please login' unless context[:current_user]
+
+      doctor = context[:current_user]
       doctor.update!(
         name: (update_profile_input&.[](:name).nil? ? doctor.name : update_profile_input[:name]),
         university:
