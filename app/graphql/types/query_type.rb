@@ -11,9 +11,9 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    field :current_doctor, DoctorType, null: false, description: 'Get logged doctor'
-    field :doctors, [DoctorType], null: false,
-                                  description: 'Query to find all doctors'
+    field :current_doctor, Doctors::DoctorType, null: false, description: 'Get logged doctor'
+    field :doctors, [Doctors::DoctorType], null: false,
+                                           description: 'Query to find all doctors'
 
     def doctors
       Doctor.all

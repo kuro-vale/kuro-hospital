@@ -8,7 +8,7 @@ class UpdateDoctorTest < ActiveSupport::TestCase
   end
 
   def perform(doctor:, **args)
-    Mutations::UpdateDoctor.new(object: nil, field: nil, context: { current_user: doctor }).resolve(**args)
+    Mutations::Doctors::UpdateDoctor.new(object: nil, field: nil, context: { current_user: doctor }).resolve(**args)
   end
 
   test 'should update a doctor' do

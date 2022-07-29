@@ -8,7 +8,7 @@ class DeleteDoctorTest < ActiveSupport::TestCase
   end
 
   def perform(doctor:)
-    Mutations::DeleteDoctor.new(object: nil, field: nil, context: { current_user: doctor }).resolve
+    Mutations::Doctors::DeleteDoctor.new(object: nil, field: nil, context: { current_user: doctor }).resolve
   end
 
   test 'should delete a doctor' do

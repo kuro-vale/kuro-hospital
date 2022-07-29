@@ -4,7 +4,7 @@ require 'test_helper'
 
 class RegisterTest < ActiveSupport::TestCase
   def perform(**args)
-    Mutations::Register.new(object: nil, field: nil, context: { session: {} }).resolve(**args)
+    Mutations::Doctors::Register.new(object: nil, field: nil, context: { session: {} }).resolve(**args)
   end
 
   test 'should create a new doctor' do

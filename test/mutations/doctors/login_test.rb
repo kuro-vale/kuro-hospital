@@ -9,7 +9,7 @@ class LoginTest < ActiveSupport::TestCase
   end
 
   def perform(**args)
-    Mutations::Login.new(object: nil, field: nil, context: { session: {} }).resolve(**args)
+    Mutations::Doctors::Login.new(object: nil, field: nil, context: { session: {} }).resolve(**args)
   end
 
   test 'should login a doctor' do
