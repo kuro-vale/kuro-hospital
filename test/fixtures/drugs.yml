@@ -1,0 +1,6 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand_name: Ruby
+  generic_name: Rubymycin
+  laboratory: RubyLab
