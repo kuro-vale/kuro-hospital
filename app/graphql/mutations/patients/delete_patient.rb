@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
 module Mutations
-  module Drugs
+  module Patients
     # Delete doctor mutation
-    class DeleteDrug < Mutations::BaseMutation
-      description 'Delete drug.'
+    class DeletePatient < Mutations::BaseMutation
+      description 'Delete patient.'
 
-      argument :id, ID, required: true, description: 'ID of the drug to delete'
+      argument :id, ID, required: true, description: 'ID of the patient to delete'
 
       field :message, String, description: 'message of success'
 
       def resolve(id:)
         raise Exceptions::AuthenticationError, 'Not Authenticated, please login' unless context[:current_user]
 
-        drug = Drug.find(id)
-        { message: "#{drug.brand_name} was deleted" } if drug.destroy
+        patient = Patient.find(id)
+        { message: "#{patient.name} was deleted" } if patient.destroy
       end
     end
   end
