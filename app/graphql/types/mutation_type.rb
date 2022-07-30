@@ -6,7 +6,11 @@ module Types
   class MutationType < Types::BaseObject
     description 'Self descriptive.'
 
+    field :create_consultation, mutation: Mutations::Consultation::CreateConsultation,
+                                description: 'Create a new consultation.'
     field :create_drug, mutation: Mutations::Drugs::CreateDrug, description: 'Create a new drug.'
+    field :delete_consultation, mutation: Mutations::Consultation::DeleteConsultation,
+                                description: 'Delete a consultation.'
     field :delete_doctor, mutation: Mutations::Doctors::DeleteDoctor, description: 'Delete your doctor profile.'
     field :delete_drug, mutation: Mutations::Drugs::DeleteDrug, description: 'Delete a drug.'
     field :login, mutation: Mutations::Doctors::Login, description: 'Self descriptive.'
