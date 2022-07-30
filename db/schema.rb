@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_29_225117) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_30_003145) do
+  create_table "consultations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "diagnosis"
+    t.string "procedure"
+    t.bigint "drug_id", null: false
+    t.bigint "patient_id", null: false
+    t.bigint "doctor_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["doctor_id"], name: "index_consultations_on_doctor_id"
+    t.index ["drug_id"], name: "index_consultations_on_drug_id"
+    t.index ["patient_id"], name: "index_consultations_on_patient_id"
+  end
+
   create_table "doctors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "university"
@@ -39,4 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_225117) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "consultations", "doctors"
+  add_foreign_key "consultations", "drugs"
+  add_foreign_key "consultations", "patients"
 end
