@@ -14,10 +14,8 @@ class CreateDrugTest < ActiveSupport::TestCase
   test 'should create a new drug' do
     payload = perform(
       doctor: @doctor,
-      names_input: {
-        brand_name: 'Ace',
-        generic_name: 'Acetaminophen'
-      },
+      brand_name: 'Ace',
+      generic_name: 'Acetaminophen',
       laboratory: 'RubyLab'
     )
 
@@ -31,10 +29,8 @@ class CreateDrugTest < ActiveSupport::TestCase
     assert_raise(Exceptions::AuthenticationError) do
       perform(
         doctor: nil,
-        names_input: {
-          brand_name: 'Ace',
-          generic_name: 'Acetaminophen'
-        },
+        brand_name: 'Ace',
+        generic_name: 'Acetaminophen',
         laboratory: 'RubyLab'
       )
     end

@@ -1,3 +1,4 @@
+# rubocop: disable GraphQL/ExtractInputType
 # frozen_string_literal: true
 
 module Mutations
@@ -6,27 +7,22 @@ module Mutations
     class CreateDrug < Mutations::BaseMutation
       description 'Create a new drug to medicate patients.'
 
-      class NamesInput < Types::BaseInputObject
-        description 'Brand and generic drug\'s names'
-
-        argument :brand_name, String, required: true, description: 'Commercial name of the drug.'
-        argument :generic_name, String, required: true, description: 'Generic name of the drug.'
-      end
-
+      argument :brand_name, String, required: true, description: 'Commercial name of the drug.'
+      argument :generic_name, String, required: true, description: 'Generic name of the drug.'
       argument :laboratory, String, required: true, description: 'Drug\'s manufacturer'
-      argument :names_input, NamesInput, required: true, description: 'Input for the drug\'s names'
 
       type Types::Drugs::DrugType
 
-      def resolve(laboratory:, names_input:)
+      def resolve(laboratory:, brand_name:, generic_name:)
         raise Exceptions::AuthenticationError, 'Not Authenticated, please login' unless context[:current_user]
 
         Drug.create!(
-          brand_name: names_input[:brand_name],
-          generic_name: names_input[:generic_name],
+          brand_name:,
+          generic_name:,
           laboratory:
         )
       end
     end
   end
 end
+# rubocop: enable GraphQL/ExtractInputType
