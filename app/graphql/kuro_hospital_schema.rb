@@ -2,6 +2,7 @@
 
 # GraphQL base Schema
 class KuroHospitalSchema < GraphQL::Schema
+  max_depth 13
   mutation(Types::MutationType)
   query(Types::QueryType)
 
