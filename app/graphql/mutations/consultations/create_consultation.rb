@@ -23,12 +23,15 @@ module Mutations
       def resolve(diagnosis:, procedure:, ids_input:)
         raise Exceptions::AuthenticationError, 'Not Authenticated, please login' unless context[:current_user]
 
+        drug = Drug.find(ids_input[:drug_id])
+        patient = Patient.find(ids_input[:patient_id])
+
         Consultation.create!(
           diagnosis:,
           procedure:,
           doctor: context[:current_user],
-          drug: Drug.find(ids_input[:drug_id]),
-          patient: Patient.find(ids_input[:patient_id])
+          drug:,
+          patient:
         )
       end
     end

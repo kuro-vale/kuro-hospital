@@ -20,6 +20,8 @@ module Types
     end
 
     def current_doctor
+      raise Exceptions::AuthenticationError, 'Not Authenticated, please login' unless context[:current_user]
+
       context[:current_user]
     end
   end
