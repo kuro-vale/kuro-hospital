@@ -13,5 +13,6 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    ENV['HMAC_SECRET'] = 'secret'
   end
 end

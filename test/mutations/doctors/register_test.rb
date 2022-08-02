@@ -8,10 +8,6 @@ class RegisterTest < ActiveSupport::TestCase
   end
 
   test 'should create a new doctor' do
-    setup do
-      ENV['HMAC_SECRET'] = 'secret'
-    end
-
     payload = perform(
       profile_input: {
         name: 'Julian',

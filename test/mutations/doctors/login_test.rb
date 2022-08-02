@@ -5,7 +5,6 @@ require 'test_helper'
 class LoginTest < ActiveSupport::TestCase
   setup do
     @doctor = doctors(:one)
-    ENV['HMAC_SECRET'] = 'secret'
   end
 
   def perform(**args)
