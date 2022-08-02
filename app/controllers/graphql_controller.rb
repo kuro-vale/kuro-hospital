@@ -19,9 +19,7 @@ class GraphqlController < ApplicationController
     result = KuroHospitalSchema.execute(query, variables:, context:, operation_name:)
     render json: result
   rescue StandardError => e
-    raise e unless Rails.env.development?
-
-    handle_error_in_development(e)
+    handle_errors(e)
   end
 
   private
@@ -56,7 +54,7 @@ class GraphqlController < ApplicationController
     end
   end
 
-  def handle_error_in_development(error)
+  def handle_errors(error)
     logger.error error.backtrace.join("\n")
 
     render json: { errors: [{ message: error.message }], data: {} },
