@@ -1,5 +1,5 @@
 # Kuro-hospital
-
+[![PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kuro-vale/kuro-hospital/main/pwd-stack.yml)
 [![Lint](https://github.com/kuro-vale/kuro-hospital/actions/workflows/lint.yml/badge.svg)](https://github.com/kuro-vale/kuro-hospital/actions/workflows/lint.yml)
 [![Tests](https://github.com/kuro-vale/kuro-hospital/actions/workflows/tests.yml/badge.svg)](https://github.com/kuro-vale/kuro-hospital/actions/workflows/tests.yml)
 
@@ -17,9 +17,17 @@ See the [DOCS](https://documenter.getpostman.com/view/20195671/Uze1x5Ag) in post
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/20195671-37109012-5adb-47ab-9cca-41ef94ec91ee?action=collection%2Ffork&collection-url=entityId%3D20195671-37109012-5adb-47ab-9cca-41ef94ec91ee%26entityType%3Dcollection%26workspaceId%3D340d12f8-bfd8-4f84-8bc7-f3b080c24682)
 
-## Docker image
+## Deploy
 
-You can run this project with the [docker image](https://hub.docker.com/r/kurovale/kuro-hospital) I made.
+Follow any of these methods and open http://localhost:3000/ to see the GraphQL playground.
+
+### Docker
+
+Run the command below to quickly deploy this project on your machine, see the [docker image](https://hub.docker.com/r/kurovale/kuro-hospital) for more info.
+
+```bash
+docker run -d -p 3000:3000 kurovale/kuro-hospital:sqlite
+```
 
 ## Quick setup
 
