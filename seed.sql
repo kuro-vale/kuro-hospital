@@ -1,15 +1,3 @@
-CREATE TABLE IF NOT EXISTS `drugs` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `brand_name` varchar(255) DEFAULT NULL,
-  `generic_name` varchar(255) DEFAULT NULL,
-  `laboratory` varchar(255) DEFAULT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
-  `updated_at` datetime(6) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `index_drugs_on_brand_name` (`brand_name`),
-  UNIQUE KEY `index_drugs_on_generic_name` (`generic_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10354 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-
 INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_at`, `updated_at`) VALUES
 	(4, 'Trout', 'Trout', 'Nelco Laboratories, Inc.', NULL, NULL),
 	(14, 'Sodium Chloride', 'Sodium Chloride', 'Cardinal Health', NULL, NULL),
@@ -96,7 +84,6 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(864, 'Ibuprofen', 'Ibuprofen', 'Wal-Mart Stores Inc', NULL, NULL),
 	(874, 'Watermelon', 'Watermelon', 'Nelco Laboratories, Inc.', NULL, NULL),
 	(894, 'Smart Sense Acid Reducer', 'Lansoprazole', 'Kmart Corporation', NULL, NULL),
-	(904, 'Simvastatin', 'Simvastatin', 'Dr. Reddy\'s Laboratories Limited', NULL, NULL),
 	(914, 'Pork', 'Pork', 'Nelco Laboratories, Inc.', NULL, NULL),
 	(924, 'E.O.L.', 'Stillingia Sylvatica, Zincum Gluconicum, Thiaminum Hydrochloricum, Fragaria Vescus, Niacin, Serotonin (Hydrochloride), 5-Hydroxytryptophan, Betainum Muriaticum', 'InLight Creation, LLC.', NULL, NULL),
 	(934, 'Arnica Plus', 'Arnia montana, Hamamelis virginiana, Rhus toxicodendron,', 'Apotheca Company', NULL, NULL),
@@ -135,7 +122,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(1274, 'Chinese Elm', 'Chinese Elm', 'Nelco Laboratories, Inc.', NULL, NULL),
 	(1284, 'Oxybutynin Chloride', 'oxybutynin chloride', 'NCS HealthCare of KY, Inc dba Vangard Labs', NULL, NULL),
 	(1294, 'Depo-Provera', 'medroxyprogesterone acetate', 'Pharmacia and Upjohn Company', NULL, NULL),
-	(1304, 'Lil Drug Store Cold Relief', 'Acetaminophen, Dextromethorphan Hydrobromide, Guaifenesin, and Phenylephrine Hydrochloride', 'Lil\' Drug Store Products, Inc.', NULL, NULL),
+	(1304, 'Lil Drug Store Cold Relief', 'Acetaminophen, Dextromethorphan Hydrobromide, Guaifenesin, and Phenylephrine Hydrochloride', 'Lil Drug Store Products, Inc.', NULL, NULL),
 	(1314, 'Nasotuss', 'Chlorcyclizine Hydrochloride, Codeine Phosphate, Phenylephrine Hydrochloride', 'Hawthorn Pharmaceuticals, Inc.', NULL, NULL),
 	(1324, 'Hydrochlorothiazide', 'Hydrochlorothiazide', 'Accord Healthcare Inc.', NULL, NULL),
 	(1334, 'Monistat 7', 'Miconazole Nitrate', 'Insight Pharmaceuticals', NULL, NULL),
@@ -151,7 +138,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(1464, 'Metronidazole', 'Metronidazole', 'UDL Laboratories, Inc.', NULL, NULL),
 	(1474, 'Travoprost Ophthalmic Solution 0.004%', 'travoprost', 'Par Pharmaceutical, Inc.', NULL, NULL),
 	(1484, 'Metoclopramide Hydrochloride', 'Metoclopramide Hydrochloride', 'Aphena Pharma Solutions - Tennessee, LLC', NULL, NULL),
-	(1494, 'Rivastigmine Tartrate', 'Rivastigmine Tartrate', 'Dr.Reddy\'s Laboratories Limited', NULL, NULL),
+	(1494, 'Rivastigmine Tartrate', 'Rivastigmine Tartrate', 'Dr.Reddys Laboratories Limited', NULL, NULL),
 	(1514, 'Guinea Pig Epithelium', 'Guinea Pig Epithelium', 'Nelco Laboratories, Inc.', NULL, NULL),
 	(1524, 'Cefuroxime and Dextrose', 'CEFUROXIME AND DEXTROSE', 'B. Braun Medical Inc.', NULL, NULL),
 	(1534, 'CISplatin', 'CISplatin', 'WG Critical Care, LLC', NULL, NULL),
@@ -191,7 +178,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(1994, 'Appeal Alcohol Foaming Hand Sanitizer', 'Ethyl Alcohol', 'Deb USA, Inc.', NULL, NULL),
 	(2004, 'Gabapentin', 'GABAPENTIN', 'Solco healthcare U.S., LLC', NULL, NULL),
 	(2034, 'Trichoderma harzianam', 'Trichoderma harzianam', 'Nelco Laboratories, Inc.', NULL, NULL),
-	(2054, 'HEPAR SULPH. CALC.', 'CALCIUM SULFIDE', 'Hyland\'s', NULL, NULL),
+	(2054, 'HEPAR SULPH. CALC.', 'CALCIUM SULFIDE', 'Hylands', NULL, NULL),
 	(2064, 'Vivelle Dot', 'estradiol', 'Physicians Total Care, Inc.', NULL, NULL),
 	(2084, 'Body', 'Menthol, zinc oxide', 'Exchange Select', NULL, NULL),
 	(2094, 'Carvedilol', 'Carvedilol', 'Northwind Pharmaceuticals', NULL, NULL),
@@ -214,7 +201,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(2334, 'Cut Care Alcohol Prep Pad', 'Isopropyl alcohol', 'Zeus Medical Holdings LLC', NULL, NULL),
 	(2344, 'Ribavirin', 'Ribavirin', 'Aurobindo Pharma Limited', NULL, NULL),
 	(2364, 'Levofloxacin', 'Levofloxacin', 'REMEDYREPACK INC.', NULL, NULL),
-	(2374, 'Fenofibrate', 'Fenofibrate', 'Dr. Reddy\'s Laboratories Limited', NULL, NULL),
+	(2374, 'Fenofibrate', 'Fenofibrate', 'Dr. Reddys Laboratories Limited', NULL, NULL),
 	(2394, 'Travel Remedy', 'PRIMULA VERIS EXTRACT ONOPORDUM HYOSCYAMUS NIGER ANTIMONY GOLD ARNICA MONTANA BELLIS PERENNIS MATRICARIA RECUTITA IPECAC LYCOPODIUM CLAVATUM SPORE', 'Uriel Pharmacy Inc', NULL, NULL),
 	(2414, 'Day Time Sinus', 'Acetaminophen and Phenylephrine Hydrochloride', 'Freds Inc', NULL, NULL),
 	(2434, 'Zonisamide', 'Zonisamide', 'Camber Pharmaceuticals', NULL, NULL),
@@ -277,7 +264,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(3224, 'bareMinerals', 'Titanium Dioxide and Zinc Oxide', 'Bare Escentuals Beauty Inc.', NULL, NULL),
 	(3234, 'Tranylcypromine Sulfate', 'tranylcypromine sulfate', 'REMEDYREPACK INC.', NULL, NULL),
 	(3244, 'Valacyclovir Hydrochloride', 'Valacyclovir Hydrochloride', 'Bryant Ranch Prepack', NULL, NULL),
-	(3254, 'Primidone', 'Primidone', 'Dr. Reddy\'s Laboratories Ltd', NULL, NULL),
+	(3254, 'Primidone', 'Primidone', 'Dr. Reddys Laboratories Ltd', NULL, NULL),
 	(3264, 'N - TIME', 'ACETAMINOPHEN, DOXYLAMINE SUCCINATE, and DEXTROMETHORPHAN HYDROBROMIDE', 'SPIRIT PHARMACEUTICALS,LLC', NULL, NULL),
 	(3284, 'Greasewood', 'Greasewood', 'Nelco Laboratories, Inc.', NULL, NULL),
 	(3294, 'Lyrica', 'PREGABALIN', 'Parke-Davis Div of Pfizer Inc', NULL, NULL),
@@ -369,7 +356,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(4584, 'Alba Lip Care Sunblock SPF 25', 'Octocrylene, Ethylhexyl Methoxycinnamate, Zinc Oxide, Ethylhexyl Salicilate', 'The Hain Celestial Group, Inc.', NULL, NULL),
 	(4594, 'Formo Cresol', 'Cresol', 'DSHealthcare', NULL, NULL),
 	(4614, 'ConRx AR', 'ALUMINUM HYDROXIDE and MAGNESIUM HYDROXIDE', 'Eagle Distributors,Inc.', NULL, NULL),
-	(4634, 'Moxifloxacin', 'Moxifloxacin', 'Dr. Reddy\'s Laboratories Limited', NULL, NULL),
+	(4634, 'Moxifloxacin', 'Moxifloxacin', 'Dr. Reddys Laboratories Limited', NULL, NULL),
 	(4644, 'Desmopressin Acetate', 'Desmopressin Acetate', 'American Health Packaging', NULL, NULL),
 	(4654, 'AMBROSIA PSILOSTACHYA POLLEN', 'Ragweed Western', 'ALK-Abello, Inc.', NULL, NULL),
 	(4684, 'Procardia', 'nifedipine', 'Pfizer Laboratories Div Pfizer Inc', NULL, NULL),
@@ -394,7 +381,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(4914, 'Cranberry', 'Cranberry', 'Antigen Laboratories, Inc.', NULL, NULL),
 	(4934, 'Bacitracin Zinc', 'bacitracin zinc', 'A-S Medication Solutions LLC', NULL, NULL),
 	(4944, 'Saline Laxative', 'sodium phosphate', 'Safeway', NULL, NULL),
-	(4964, 'Cough and Bronchial with Zinc', 'ANTIMONY PENTASULFIDE, BRYONIA ALBA ROOT, DROSERA ROTUNDIFOLIA, EUCALYPTUS GLOBULUS LEAF, IPECAC, SPONGIA OFFICINALIS SKELETON, ROASTED, ZINC GLUCONATE', 'Nature\'s Way Products, Inc.', NULL, NULL),
+	(4964, 'Cough and Bronchial with Zinc', 'ANTIMONY PENTASULFIDE, BRYONIA ALBA ROOT, DROSERA ROTUNDIFOLIA, EUCALYPTUS GLOBULUS LEAF, IPECAC, SPONGIA OFFICINALIS SKELETON, ROASTED, ZINC GLUCONATE', 'Natures Way Products, Inc.', NULL, NULL),
 	(4984, 'Lucky Supersoft', 'Menthol Zinc Oxide', 'Delta Brands Inc', NULL, NULL),
 	(4994, 'Chlorothiazide', 'Chlorothiazide', 'West-ward Pharmaceutical Corp', NULL, NULL),
 	(5024, 'Homeopathic Eye Strain', 'silver nitrate, eyebright, carbonate of potassium, garden rue', 'Indiana Botanic Gardens', NULL, NULL),
@@ -445,7 +432,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(5744, 'Glyburide-Metformin Hydrochloride', 'Glyburide-Metformin Hydrochloride', 'Heritage Pharmaceuticals Inc.', NULL, NULL),
 	(5764, 'Systane', 'polyethylene glycol 0.4% and propylene glycol 0.3%', 'Alcon Research Ltd', NULL, NULL),
 	(5794, 'Terbutaline Sulfate', 'Terbutaline Sulfate', 'Rebel Distributors Corp', NULL, NULL),
-	(5814, 'ARNICA', 'ARNICA MONTANA', 'Hyland\'s', NULL, NULL),
+	(5814, 'ARNICA', 'ARNICA MONTANA', 'Hylands', NULL, NULL),
 	(5824, 'SUPER DEFENSE', 'OXYBENZONE, OCTISALATE, AVOBENZONE', 'CLINIQUE LABORATORIES INC', NULL, NULL),
 	(5834, 'Metolazone', 'Metolazone', 'NCS HealthCare of KY, Inc dba Vangard Labs', NULL, NULL),
 	(5844, 'Perindopril Erbumine', 'Perindopril Erbumine', 'Aurobindo Pharma Limited', NULL, NULL),
@@ -515,7 +502,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(7114, 'BEAUTE INITIALE', 'ENERGIZING MULTI-PROTECTION CREAM', 'CHANEL PARFUMS BEAUTE', NULL, NULL),
 	(7134, 'FAGUS GRANDIFOLIA POLLEN', 'Beech', 'ALK-Abello, Inc.', NULL, NULL),
 	(7144, 'Amitriptyline Hydrochloride', 'Amitriptyline Hydrochloride', 'Dispensing Solutions, Inc.', NULL, NULL),
-	(7194, 'Teething', 'TRIBASIC CALCIUM PHOSPHATE, MATRICARIA RECUTITA, ARABICA COFFEE BEAN, and ATROPA BELLADONNA', 'Hyland\'s', NULL, NULL),
+	(7194, 'Teething', 'TRIBASIC CALCIUM PHOSPHATE, MATRICARIA RECUTITA, ARABICA COFFEE BEAN, and ATROPA BELLADONNA', 'Hylands', NULL, NULL),
 	(7214, 'healthy accents maldroxal', 'Aluminum hydroxide, Magnesium hydroxide, Simethicone', 'DZA Brands LLC', NULL, NULL),
 	(7224, 'Advanced Eye Relief/ Redness Maximum Relief', 'Naphazoline Hydrochloride and Hypromellose', 'Bausch & Lomb Incorporated', NULL, NULL),
 	(7254, 'DIORSNOW UV SHIELD BB CREME WHITE REVEAL UV PROTECTION SPF 50', 'OCTINOXATE, TITANIUM DIOXIDE, OXYBENZONE', 'Parfums Christian Dior', NULL, NULL),
@@ -557,7 +544,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(8074, 'bacitracin zinc, neomycin sulfate and polymyxin b sulfate', 'bacitracin zinc, neomycin sulfate and polymyxin b sulfate', 'Sion Biotext Medical Ltd', NULL, NULL),
 	(8104, 'Molds - Mold Mix 10', 'Molds - Mold Mix 10', 'Jubilant HollisterStier LLC', NULL, NULL),
 	(8114, 'Sodium Sulfacetamide and Sulfur', 'Sodium Sulfacetamide and Sulfur', 'Acella Pharmaceuticals, LLC', NULL, NULL),
-	(8124, 'LEDUM PAL', 'LEDUM PALUSTRE TWIG', 'Hyland\'s', NULL, NULL),
+	(8124, 'LEDUM PAL', 'LEDUM PALUSTRE TWIG', 'Hylands', NULL, NULL),
 	(8144, 'Triamcinolone Acetonide', 'Triamcinolone Acetonide', 'Rebel Distributors Corp', NULL, NULL),
 	(8164, 'Gastropanpar', 'Pancreas, Stomach, Arsenicum Album, Graphites, Lycopodium Clavatum, Nuv Vomica, Phosphorus, Syzygium Jambolanum', 'Energique, Inc.', NULL, NULL),
 	(8174, 'Cough and Cold Relief HBP', 'Chlorpheniramine maleate and Dextromethorphan HBr', 'CHAIN DRUG MARKETING ASSOCIATION INC', NULL, NULL),
@@ -603,7 +590,7 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(9084, 'Relaxation Complex', 'Anacardium, Calcerea carbonica, Hypericum, Magnesia phosphorica, Piper methysticum, Ruta graveolens, Silicea', 'Nova Homeopathic Therapeutics, Inc.', NULL, NULL),
 	(9094, 'Family Care Tolnaftate', 'Tolnaftate', 'united exchange corp', NULL, NULL),
 	(9104, 'Dentox', 'Berberis vulgaris, Glycyrrhiza glabra, Lappa major, Phytolacca decandra, Stillingia sylvatica, Trifolium pratense, Lymph (suis), Medulla ossis (suis), Thymus (suis),', 'Apotheca Company', NULL, NULL),
-	(9114, 'Toms Wicked Fresh Spearmint Ice', 'Sodium Monofluorophosphate', 'Tom\'s of Maine, Inc.', NULL, NULL),
+	(9114, 'Toms Wicked Fresh Spearmint Ice', 'Sodium Monofluorophosphate', 'Toms of Maine, Inc.', NULL, NULL),
 	(9144, 'Acetaminophen and Codeine', 'Acetaminophen and Codeine', 'REMEDYREPACK INC.', NULL, NULL),
 	(9164, 'Tramadol Hydrochloride and Acetaminophen', 'tramadol hydrochloride and acetaminophen', 'Lake Erie Medical & Surgical Supply DBA Quality Care Products LLC', NULL, NULL),
 	(9194, 'vancomycin hydrochloride', 'vancomycin hydrochloride', 'Alvogen, Inc.', NULL, NULL),
@@ -640,18 +627,6 @@ INSERT INTO `drugs` (`id`, `brand_name`, `generic_name`, `laboratory`, `created_
 	(9944, 'Category V', 'Immune System Booster', 'Vitality Works, Inc,', NULL, NULL),
 	(9994, 'RIFAMPIN', 'RIFAMPIN', 'Major Pharmaceuticals', NULL, NULL);
 
-CREATE TABLE IF NOT EXISTS `doctors` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `university` varchar(255) DEFAULT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
-  `updated_at` datetime(6) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `password_digest` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `index_doctors_on_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1014 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-
 INSERT INTO `doctors` (`id`, `name`, `university`, `created_at`, `updated_at`, `username`, `password_digest`) VALUES
 	(4, 'Tadd Norcross', 'Missouri Valley College', NULL, NULL, 'tnorcross0', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(14, 'Rollie Bourcq', 'College of the Ozarks', NULL, NULL, 'rbourcq1', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
@@ -669,7 +644,7 @@ INSERT INTO `doctors` (`id`, `name`, `university`, `created_at`, `updated_at`, `
 	(134, 'Aldous Chaperlin', 'Bindura University of Science Education', NULL, NULL, 'achaperlind', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(144, 'Pearla Tatton', 'Andrassy Gyula German Speaking University Budapest', NULL, NULL, 'ptattone', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(154, 'Urbain Gonnard', 'Dickinson College', NULL, NULL, 'ugonnardf', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
-	(164, 'Tasha Kayley', 'Centre d\'Etudes Supérieures des Techniques Industrielles', NULL, NULL, 'tkayleyg', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
+	(164, 'Tasha Kayley', 'Centre dEtudes Supérieures des Techniques Industrielles', NULL, NULL, 'tkayleyg', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(174, 'Cassy Leggen', 'Tokyo University of Pharmacy and Life Science', NULL, NULL, 'cleggenh', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(184, 'Davida Osmint', 'Antioch New England Graduate School', NULL, NULL, 'dosminti', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(194, 'Welch Flag', 'Universitas Ibn Khaldun Bogor', NULL, NULL, 'wflagj', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
@@ -719,7 +694,7 @@ INSERT INTO `doctors` (`id`, `name`, `university`, `created_at`, `updated_at`, `
 	(634, 'Des Mingo', 'Universidad ICESI', NULL, NULL, 'dmingo1r', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(644, 'Lyndell Bramble', 'Instituto Politécnico de Beja', NULL, NULL, 'lbramble1s', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(654, 'Chrissy Keeley', 'Akita University of Economics and Law', NULL, NULL, 'ckeeley1t', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
-	(664, 'Thaddus O\'Spellissey', 'Centre Universitaire de Technologie', NULL, NULL, 'tospellissey1u', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
+	(664, 'Thaddus OSpellissey', 'Centre Universitaire de Technologie', NULL, NULL, 'tospellissey1u', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(674, 'Malcolm Paling', 'Ecole Normale Supérieure de Paris', NULL, NULL, 'mpaling1v', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(684, 'Shannon Eymer', 'Gezira College of Technology', NULL, NULL, 'seymer1w', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(694, 'Liesa Vittel', 'Universidad Autónoma Latinoamericana', NULL, NULL, 'lvittel1x', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
@@ -736,7 +711,7 @@ INSERT INTO `doctors` (`id`, `name`, `university`, `created_at`, `updated_at`, `
 	(804, 'Gunar Roundtree', 'Southern Connecticut State University', NULL, NULL, 'groundtree28', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(814, 'Ariel Smallcombe', 'Universidad Nacional de Santiago del Estero', NULL, NULL, 'asmallcombe29', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(824, 'Kessia Label', 'Universidad Tecnologica Israel', NULL, NULL, 'klabel2a', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
-	(834, 'Sky Mottershaw', 'Ecole Nationale Supérieure d\'Electronique, d\'Electrotechnique, d\'Informatique et d\'Hydraulique de Toulouse', NULL, NULL, 'smottershaw2b', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
+	(834, 'Sky Mottershaw', 'Ecole Nationale Supérieure dElectronique, dElectrotechnique, dInformatique et dHydraulique de Toulouse', NULL, NULL, 'smottershaw2b', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(844, 'Geordie Bianco', 'Fresno City College', NULL, NULL, 'gbianco2c', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(854, 'Binny MacEveley', 'Mary Baldwin College', NULL, NULL, 'bmaceveley2d', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(864, 'Murry Hagley', 'Universidade do Rio Grande', NULL, NULL, 'mhagley2e', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
@@ -753,16 +728,6 @@ INSERT INTO `doctors` (`id`, `name`, `university`, `created_at`, `updated_at`, `
 	(974, 'Tully Dignam', 'Ohio Wesleyan University', NULL, NULL, 'tdignam2p', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(984, 'Benetta Headly', 'Institute of Latin American Studies, University of London', NULL, NULL, 'bheadly2q', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe'),
 	(994, 'Francklyn Montford', 'Dunya Institute of Higher Education', NULL, NULL, 'fmontford2r', '$2a$12$1q91PdiuvEmR1USq8Kb1Muy1TE0YAq319wKS62aWm60RSgMJQ2zCe');
-	
-CREATE TABLE IF NOT EXISTS `patients` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `age` int(11) DEFAULT NULL,
-  `gender` varchar(255) DEFAULT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
-  `updated_at` datetime(6) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1014 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 INSERT INTO `patients` (`id`, `name`, `age`, `gender`, `created_at`, `updated_at`) VALUES
 	(4, 'Griff Lethardy', 22, 'X', NULL, NULL),
@@ -800,7 +765,7 @@ INSERT INTO `patients` (`id`, `name`, `age`, `gender`, `created_at`, `updated_at
 	(324, 'Isabel Tommasuzzi', 61, 'X', NULL, NULL),
 	(334, 'Ali Sprakes', 34, 'M', NULL, NULL),
 	(344, 'Silvia Martinyuk', 66, 'F', NULL, NULL),
-	(354, 'Stavro M\'Quharge', 51, 'X', NULL, NULL),
+	(354, 'Stavro MQuharge', 51, 'X', NULL, NULL),
 	(364, 'Doroteya Speers', 54, 'M', NULL, NULL),
 	(374, 'Carleen Barz', 34, 'M', NULL, NULL),
 	(384, 'Bernice Scutts', 64, 'M', NULL, NULL),
@@ -823,7 +788,7 @@ INSERT INTO `patients` (`id`, `name`, `age`, `gender`, `created_at`, `updated_at
 	(554, 'Shirley Hardes', 38, 'X', NULL, NULL),
 	(564, 'Randi Bosanko', 66, 'F', NULL, NULL),
 	(574, 'Jerald Peat', 46, 'M', NULL, NULL),
-	(584, 'Netta O\'Corhane', 28, 'X', NULL, NULL),
+	(584, 'Netta OCorhane', 28, 'X', NULL, NULL),
 	(594, 'Aubert Aucoate', 33, 'F', NULL, NULL),
 	(604, 'Barbabra Martinello', 20, 'M', NULL, NULL),
 	(614, 'Sharai Brahms', 48, 'F', NULL, NULL),
@@ -865,24 +830,6 @@ INSERT INTO `patients` (`id`, `name`, `age`, `gender`, `created_at`, `updated_at
 	(974, 'Barron Eades', 39, 'F', NULL, NULL),
 	(984, 'Cathrine Louth', 55, 'M', NULL, NULL),
 	(994, 'Abbe Gounot', 37, 'X', NULL, NULL);
-
-CREATE TABLE IF NOT EXISTS `consultations` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `diagnosis` varchar(255) DEFAULT NULL,
-  `procedure` varchar(255) DEFAULT NULL,
-  `drug_id` bigint(20) NOT NULL,
-  `patient_id` bigint(20) NOT NULL,
-  `doctor_id` bigint(20) NOT NULL,
-  `created_at` datetime(6) DEFAULT NULL,
-  `updated_at` datetime(6) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_consultations_on_drug_id` (`drug_id`),
-  KEY `index_consultations_on_patient_id` (`patient_id`),
-  KEY `index_consultations_on_doctor_id` (`doctor_id`),
-  CONSTRAINT `fk_rails_33c52f1c05` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`),
-  CONSTRAINT `fk_rails_b1f629cdac` FOREIGN KEY (`doctor_id`) REFERENCES `doctors` (`id`),
-  CONSTRAINT `fk_rails_d0a5f61ace` FOREIGN KEY (`drug_id`) REFERENCES `drugs` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10014 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 INSERT INTO `consultations` (`id`, `diagnosis`, `procedure`, `drug_id`, `patient_id`, `doctor_id`, `created_at`, `updated_at`) VALUES
 	(664, 'Cerebral infarction due to thrombosis of left carotid artery', 'Repair Coronary Vein, Percutaneous Approach', 694, 74, 4, NULL, NULL),
